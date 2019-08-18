@@ -57,7 +57,9 @@ function purchasePrompt(){
 
 function purchaseOrder(ID, aRequested){
 	connection.query('Select * FROM products WHERE item_id = ' + ID, function(err,res){
+
 		if(err){console.log(err)};
+
 		if(aRequested <= res[0].stock_quantity){
 			var totalCost = res[0].price * aRequested;
 			console.log("Good news your order is in stock!");
@@ -65,7 +67,7 @@ function purchaseOrder(ID, aRequested){
 
 			connection.query("UPDATE products SET stock_quantity = (stock_quantity - " + aRequested + ") WHERE item_id = " + ID);
 		} else{
-			console.log("Amount requested for " + res[0].product_name + "exceeded inventory in stock. We do apologies.");
+			console.log("Amount requested for " + res[0].product_name + " exceeded amount in stock. We do apologies.");
 		};
 		displayProducts();
 	});
