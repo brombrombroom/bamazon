@@ -5,8 +5,8 @@ var Screen = require("cli-table");
 var connection = mysql.createConnection({
 	host:"localhost",
 	port:3306,
-	user:"root",
-	password:"bojangles",
+	user:"frank",
+	password:"bingo",
 	database:"bamazon"
 });
 
@@ -63,7 +63,7 @@ function purchaseOrder(ID, aRequested){
 			console.log("Good news your order is in stock!");
 			console.log("Your total cost for " + aRequested + " " +res[0].product_name + " is " + totalCost + " Thank you!");
 
-			connection.query("UPDATE products SET stock_quantity = stock_quantity - " + aRequested + "WHERE item_id = " + ID);
+			connection.query("UPDATE products SET stock_quantity = (stock_quantity - " + aRequested + ") WHERE item_id = " + ID);
 		} else{
 			console.log("Amount requested for " + res[0].product_name + "exceeded inventory in stock. We do apologies.");
 		};

@@ -24,5 +24,4 @@ VALUES (1, "League of Legend", "PC", 59.99, 10),
 	   (6, "Call Of Duty", "PC", 19.99, 10),
 	   (7, "Wireless Controller", "PS4", 49.99, 10),
 	   (8, "Wireless Headset", "PS4", 69.99, 10),
-	   (9, "Andriod Charging Cable", "MISC", 9.99, 10),
-	   (10, "shoes", "basketball", 89.99, 10)
+	   (9, "Andriod Charging Cable", "MISC", 9.99, 10)
